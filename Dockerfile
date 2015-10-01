@@ -1,9 +1,9 @@
 FROM svanosselaer/ansible-ubuntu:14.04
 MAINTAINER Sean Van Osselaer <svo@qual.is>
 
-ADD . /
+ADD . /provisioning
 
-RUN ansible-playbook playbook.yml && \
+RUN ansible-playbook provisioning/playbook.yml && \
     apt-get autoremove -y && \
     apt-get autoclean -y && \
     apt-get clean -y
